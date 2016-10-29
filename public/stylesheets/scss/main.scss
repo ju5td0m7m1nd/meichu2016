@@ -2,11 +2,8 @@
 
 
 .nav {
-  position: fixed;
-  top: 0px;
-  left: 0px;
   width: 100%;
-  padding: 5px 10%;
+  padding: 10px 10%;
   z-index: 10;
   display: flex;
   justify-content: space-between;
@@ -43,8 +40,8 @@
   position: relative;
   .hero-image {
     position:absolute;
-    right: 0px;
-    bottom: 0px;
+    right: 5%;
+    bottom: 5%;
     height: 55vh;
   }
   .content {
