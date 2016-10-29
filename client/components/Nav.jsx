@@ -13,7 +13,7 @@ export default class Nav extends React.Component {
   render() {
     const {route} = this.props;
     return (
-      <div className="nav">
+      <div className="nav shadow-1">
         <div className="logo-block" onClick={() => window.location.href = '/'}>
           <img className="logo" src="public/images/eye_logo.png" />
           <div className="title" >Ad Review</div>

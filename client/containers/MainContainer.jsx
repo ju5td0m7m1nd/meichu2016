@@ -45,6 +45,7 @@ class MainContainer extends React.Component {
       <section>
         <Nav route="/"/>
         <div className="hero shadow-1">
+          <img className="hero-image" src="public/images/1.png" />
           <div className="content">
             <div className="slogan">
               <h1>用三分鐘，</h1>
