@@ -6,17 +6,10 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import { push } from 'react-router-redux';
 import App from './containers/App';
-
-
-
-function checkLogin(store, nextState, replaceState) {
-  if (!store.getState().user.auth) {
-    store.dispatch(push('/'));
-  }
-}
+import MainContainer from './containers/MainContainer';
 
 export default (store) => (
   <Route path="/" component={App} >
-
+    <IndexRoute component={MainContainer} />
   </Route>
 );

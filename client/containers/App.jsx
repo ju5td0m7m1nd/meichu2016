@@ -25,18 +25,6 @@ class App extends React.Component {
             {
               children
             }
-            <Snackbar
-              open={open}
-              message={msg}
-              autoHideDuration={3000}
-              bodyStyle={
-                !error ? {
-                  background: 'rgb(0, 188, 212)',
-                } : {
-                  background: 'rgb(255, 64, 129)'
-                }
-              }
-            />
           </div>
         </MuiThemeProvider>
       </div>
@@ -50,12 +38,5 @@ App.propTypes = {
   location: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = (state) => ({
-  auth: state.user.auth,
-  userInfo: state.user.userInfo,
-  msg: state.toast.msg,
-  open: state.toast.open,
-  error: state.toast.error,
-});
 
-export default connect(mapStateToProps)(App);
+export default connect()(App);
