@@ -95,13 +95,31 @@
   min-height: 30vh;
   text-align: center;
   background: #FFD54F;
-  padding: 30px;
+  padding: 50px 10% 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  .get-start-img {
+    height: 30vh;
+  }
+  .content-block {
+    text-align: left;
+    width: 40%;
+    h2 {
+      font-weight: bold;
+    }
+    h4 {
+      line-height: 200%;
+      color: #050505;
+    }
+  }
   .content {
     padding: 30px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
   }
 }
 

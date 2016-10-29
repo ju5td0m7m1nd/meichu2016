@@ -10,12 +10,21 @@ import FlatButton from 'material-ui/FlatButton';
 import Nav from '../components/Nav';
 
 
-import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
+import {connect} from 'react-redux';
+import {push} from 'react-router-redux';
+
+import userArray from '../utils/userArray';
 
 class MainContainer extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      users: {},
+    }
+  }
+
+  componentDidMount() {
+    this.setState({users: userArray()});
   }
 
   scrollToWhy = () => {
@@ -23,18 +32,18 @@ class MainContainer extends React.Component {
       + window.pageYOffset;
     let currentTop = window.pageYOffset;
     let time = 10;
-    while( currentTop < position ) {
-      time = time + (200/time);
+    while (currentTop < position) {
+      time = time + (200 / time);
       currentTop += 1;
-      ((y, t) => setTimeout(() => window.scrollTo(0, y), t)
-      )(currentTop, time);
+      ((y, t) => setTimeout(() => window.scrollTo(0, y), t))(currentTop, time);
     }
   }
 
   render() {
+    console.log(this.state.users);
     return (
       <section>
-        <Nav route="/" />
+        <Nav route="/"/>
         <div className="hero shadow-1">
           <div className="content">
             <div className="slogan">
@@ -53,16 +62,24 @@ class MainContainer extends React.Component {
           <div className="flow-chart"></div>
         </div>
         <div className="get-start shadow-1">
-          <h2>
-            想知道和什麼優質的廣告擦身而過嗎
-          </h2>
-          <div className="content">
-            <RaisedButton
-              label="馬上回顧"
-              backgroundColor="#FFF"
-              labelColor="#FFC107"
-              onClick={() => this.props.dispatch(push('/review'))}
-            />
+          <div className="image-block">
+            <img className="get-start-img" src="public/images/get_start.png"/>
+          </div>
+          <div className="content-block">
+            <h1>
+              想知道和什麼優質的廣告擦身而過嗎
+            </h1>
+            <h4>
+              我們透過您的瀏覽記錄，幫您整理出了所有曾經投放給您的廣告，將它們做成影片，您一切要看看！
+            </h4>
+            <div className="content">
+              <RaisedButton
+                label="馬上回顧"
+                backgroundColor="#FFF"
+                labelColor="#FFC107"
+                onClick={() => this.props.dispatch(push('/review'))}
+              />
+            </div>
           </div>
         </div>
         <div className="share">

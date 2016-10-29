@@ -95,13 +95,27 @@ h1 {
   min-height: 30vh;
   text-align: center;
   background: #FFD54F;
-  padding: 30px; }
+  padding: 50px 10% 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start; }
+  .get-start .get-start-img {
+    height: 30vh; }
+  .get-start .content-block {
+    text-align: left;
+    width: 40%; }
+    .get-start .content-block h2 {
+      font-weight: bold; }
+    .get-start .content-block h4 {
+      line-height: 200%;
+      color: #050505; }
   .get-start .content {
     padding: 30px;
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    position: relative; }
 
 .share {
   width: 100%;
