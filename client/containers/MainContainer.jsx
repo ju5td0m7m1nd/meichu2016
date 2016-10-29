@@ -6,8 +6,13 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
+import Nav from '../components/Nav';
 
-export default class MainContainer extends React.Component {
+
+import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
+
+class MainContainer extends React.Component {
   constructor(props) {
     super(props)
   }
@@ -15,13 +20,7 @@ export default class MainContainer extends React.Component {
   render() {
     return (
       <section>
-        <div className="nav">
-          <div className="title">Ad Review</div>
-          <div className="icons">
-            <div className="icon">Why</div>
-            <div className="icon">Review Now</div>
-          </div>
-        </div>
+        <Nav route="/" />
         <div className="hero shadow-1">
           <div className="content">
             <div className="slogan">
@@ -39,26 +38,37 @@ export default class MainContainer extends React.Component {
           <div className="flow-chart"></div>
           <div className="flow-chart"></div>
         </div>
-        <div className="get-start">
+        <div className="get-start shadow-1">
           <h2>
             想知道和什麼優質的廣告擦身而過嗎
           </h2>
           <div className="content">
-            <RaisedButton label="馬上回顧" backgroundColor="#FFF" labelColor="#FFC107"/>
+            <RaisedButton
+              label="馬上回顧"
+              backgroundColor="#FFF"
+              labelColor="#FFC107"
+              onClick={() => this.props.dispatch(push('/review'))}
+            />
           </div>
         </div>
         <div className="share">
           <h2>
-            和大家分享今天遇到了哪些廣告！
+            和大家分享遇到了哪些廣告！
           </h2>
           <div className="content">
-            <RaisedButton label="分享" backgroundColor="#FFF" labelColor="#FFC107"/>
+            <RaisedButton
+              label="分享"
+              backgroundColor="#FFF"
+              labelColor="#FFC107"
+            />
           </div>
         </div>
-        <div className="footer">
+        <div className="footer shadow-1">
           扣頂大法師2 x ringo © 2016
         </div>
       </section>
     )
   }
 }
+
+export default connect()(MainContainer);

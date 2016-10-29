@@ -9,9 +9,25 @@
   justify-content: space-between;
   align-items: center;
   background: #FFC107;
-  color: #FFF;
+  color: #000;
+  .logo-block {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    .logo {
+      height: 5vh;
+    }
+    .title {
+      font-weight: bold;
+    }
+  }
+  @media all and (max-width: 768px ) {
+    font-size: 18px;
+  }
+
   .icons {
-    width: 30%;
+    width: 50%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -20,7 +36,7 @@
 
 .hero {
   width: 100%;
-  height: 60vh;
+  min-height: 60vh;
   background: #FFA000;
   padding: 10% 10%;
   .content {
@@ -52,6 +68,12 @@
         box-shadow: inset 100px 0 0 0 #FFF;
       }
     }
+    @media all and (max-width: 768px ) {
+      width: 100%;
+        .description {
+          width: 100%;
+        }
+    }
   }
 
 }
@@ -70,10 +92,10 @@
 
 .get-start {
   width: 100%;
-  height: 30vh;
+  min-height: 30vh;
   text-align: center;
   background: #FFD54F;
-  padding: 15px 0px;
+  padding: 30px;
   .content {
     padding: 30px;
     width: 100%;
@@ -85,9 +107,19 @@
 
 .share {
   width: 100%;
-  height: 30vh;
+  min-height: 30vh;
   text-align: center;
   padding: 15px 0px;
+}
+
+.film {
+  width: 100%;
+  min-height: 60vh;
+  background: #000;
+}
+
+.ad-grid {
+  padding: 5px 10%;
 }
 
 .footer {
