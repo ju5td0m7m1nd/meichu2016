@@ -4,6 +4,7 @@
  */
 
 import React from 'react';
+import ReactDOM from 'react-dom';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import Nav from '../components/Nav';
@@ -15,6 +16,19 @@ import { push } from 'react-router-redux';
 class MainContainer extends React.Component {
   constructor(props) {
     super(props)
+  }
+
+  scrollToWhy = () => {
+    const position = ReactDOM.findDOMNode(this.refs.why).getBoundingClientRect().top
+      + window.pageYOffset;
+    let currentTop = window.pageYOffset;
+    let time = 10;
+    while( currentTop < position ) {
+      time = time + (200/time);
+      currentTop += 1;
+      ((y, t) => setTimeout(() => window.scrollTo(0, y), t)
+      )(currentTop, time);
+    }
   }
 
   render() {
@@ -30,10 +44,10 @@ class MainContainer extends React.Component {
             <div className="description">
               每天都有好幾十家公司在為了讓您看到最符合您的廣告而努力著
             </div>
-            <div className="continue">了解更多</div>
+            <div className="continue" onClick={this.scrollToWhy}>了解更多</div>
           </div>
         </div>
-        <div className="why">
+        <div className="why" ref="why">
           <div className="flow-chart"></div>
           <div className="flow-chart"></div>
           <div className="flow-chart"></div>
