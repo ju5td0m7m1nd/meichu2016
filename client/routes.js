@@ -12,6 +12,6 @@ import ReviewContainer from './containers/ReviewContainer';
 export default (store) => (
   <Route path="/" component={App} >
     <IndexRoute component={MainContainer} />
-    <Route path="/review" component={ReviewContainer} />
+    <Route path="/:userID" component={ReviewContainer} />
   </Route>
 );

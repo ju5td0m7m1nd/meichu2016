@@ -13,18 +13,15 @@ import Nav from '../components/Nav';
 import {connect} from 'react-redux';
 import {push} from 'react-router-redux';
 
-import userArray from '../utils/userArray';
-
 class MainContainer extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      users: {},
+      currentUser: 1,
     }
   }
 
   componentDidMount() {
-    this.setState({users: userArray()});
   }
 
   scrollToWhy = () => {
@@ -39,11 +36,13 @@ class MainContainer extends React.Component {
     }
   }
 
+  handleChange = (e, index, value) => this.setState({currentUser: value})
+
   render() {
     console.log(this.state.users);
     return (
       <section>
-        <Nav route="/"/>
+        <Nav route="/" user={this.state.currentUser} handleChange={this.handleChange} />
         <div className="hero shadow-1">
           <img className="hero-image" src="public/images/1.png" />
           <div className="content">
@@ -71,14 +70,14 @@ class MainContainer extends React.Component {
               想知道和什麼優質的廣告擦身而過嗎
             </h1>
             <h4>
-              我們透過您的瀏覽記錄，幫您整理出了所有曾經投放給您的廣告，將它們做成影片，您一切要看看！
+              我們透過您的瀏覽記錄，幫您整理出了所有曾經投放給您的廣告，將它們做成影片，您一定要看看！
             </h4>
             <div className="content">
               <RaisedButton
                 label="馬上回顧"
                 backgroundColor="#FFF"
                 labelColor="#FFC107"
-                onClick={() => this.props.dispatch(push('/review'))}
+                onClick={() => this.props.dispatch(push(`/${this.state.currentUser}`))}
               />
             </div>
           </div>

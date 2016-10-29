@@ -4,9 +4,8 @@
  */
 import React from 'react';
 import {GridList, GridTile} from 'material-ui/GridList';
-import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+
 
 class AdGrid extends React.Component {
   constructor(props) {
@@ -16,20 +15,28 @@ class AdGrid extends React.Component {
   render() {
     return (
       <div className="ad-grid">
-        <div>
-          <GridList
-            cellHeight={180}
+        <div>{
+          this.props.ads.length ? <GridList
+            cellHeight={360}
           >
-            <Subheader>{this.props.subtitle}</Subheader>
-            {[1,2,3,4].map((tile) => (
-              <GridTile
-                key={tile}
-                title={tile}
-                subtitle={<span>tile</span>}
-              >
-              </GridTile>
-            ))}
-          </GridList>
+            <Subheader style={{fontSize: '32px'}}>{this.props.subtitle}</Subheader>
+            <Subheader style={{fontSize: '16px'}}>{this.props.description}</Subheader>
+            {
+              this.props.ads.map((tile, key) => (
+                <GridTile
+                  key={key}
+                  title={tile.itemname}
+                  subtitle={<span>{tile.description}</span>}
+                  style = {{
+                    lineHeight: '2'
+                  }}
+                >
+                  <img src={tile.adurl} />
+                </GridTile>
+              ))
+            }
+          </GridList> : ''
+        }
         </div>
       </div>
     )
