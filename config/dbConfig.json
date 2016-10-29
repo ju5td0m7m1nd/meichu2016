@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "admin",
+    "password": "airocks!",
+    "database": "aipromotion",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "migration": {
+    "username": "admin",
+    "password": "airocks!",
+    "database": "aipromotion",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "admin",
+    "password": "airocks!",
+    "database": "aipromotion",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}

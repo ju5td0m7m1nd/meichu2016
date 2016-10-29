@@ -1,0 +1,304 @@
+.subscribe .container {
+  width: 100%;
+  height: auto;
+  background: url("../../images/pexels-photo-64769.jpeg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .subscribe .container .cover {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); }
+  .subscribe .container .subscribe-block {
+    z-index: 2;
+    margin: 5%;
+    color: #FFF;
+    height: 100%; }
+    .subscribe .container .subscribe-block .description {
+      font-size: 24px;
+      margin-bottom: 10px; }
+    .subscribe .container .subscribe-block .input-block input {
+      width: 100%;
+      border: 0px;
+      background: transparent;
+      padding: 5px;
+      color: #FFF;
+      border-bottom: 2px solid #FFF;
+      outline: none; }
+    .subscribe .container .subscribe-block .button-block {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .subscribe .container .subscribe-block .button-block .submit-btn {
+        margin-top: 15px;
+        border: 2px solid #FFF;
+        display: inline-block;
+        box-shadow: inset 0 0 0 0 #FFF;
+        padding: 5px; }
+        @media all and (min-width: 768px) {
+          .subscribe .container .subscribe-block .button-block .submit-btn {
+            transition: all .3s ease-in;
+            cursor: pointer; }
+            .subscribe .container .subscribe-block .button-block .submit-btn:hover {
+              box-shadow: inset 100px 0 0 0 #FFF;
+              color: #000; } }
+
+.nav {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 15%;
+  height: 100%;
+  background: #F8F8F8; }
+  .nav .title {
+    background: #01BF83;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5vmax;
+    color: white;
+    padding: 20px; }
+  .nav .links {
+    width: 100%;
+    padding: 30px 30% 30px; }
+    .nav .links .link {
+      margin: 15px 0px; }
+      .nav .links .link a, .nav .links .link p {
+        color: #B9BCC1;
+        font-size: 1.5vmax;
+        cursor: pointer;
+        transition: all .3s ease-in; }
+        @media all and (min-width: 768px) {
+          .nav .links .link a:hover, .nav .links .link p:hover {
+            color: #000; } }
+    .nav .links .active {
+      font-weight: bold; }
+      .nav .links .active a {
+        color: #000; }
+  .nav .member-block {
+    border-top: 1px solid #B9BCC1; }
+  .nav label {
+    font-size: 1vmax;
+    font-weight: bold;
+    color: #B5B9C2; }
+
+a {
+  text-decoration: none;
+  border: 0px;
+  color: inherit; }
+
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.156863) 0px 2px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 2px 10px 0px; }
+
+.heavy-shadow {
+  box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21); }
+
+.talk .container {
+  padding: 15px;
+  margin-left: 15%;
+  position: relative;
+  background: #F8F8F8; }
+  .talk .container .search {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5vmax;
+    color: white;
+    padding: 6px; }
+  .talk .container .talk-list .talk-info-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F5F5F5;
+    border-top: 1px solid #C5C5C5;
+    cursor: pointer;
+    padding: 30px 30px 15px;
+    width: 100%;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out; }
+    .talk .container .talk-list .talk-info-block .content-container {
+      width: 80%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .talk .container .talk-list .talk-info-block .content-container .info {
+        width: 70%; }
+        .talk .container .talk-list .talk-info-block .content-container .info .speaker {
+          font-size: 16px;
+          color: #999; }
+        .talk .container .talk-list .talk-info-block .content-container .info .title {
+          font-size: 24px;
+          font-weight: 500;
+          margin-bottom: 15px; }
+        .talk .container .talk-list .talk-info-block .content-container .info .location, .talk .container .talk-list .talk-info-block .content-container .info .time {
+          font-size: 16px;
+          color: #999; }
+        .talk .container .talk-list .talk-info-block .content-container .info .time {
+          border-bottom: 1px solid #C5C5C5;
+          padding-bottom: 15px; }
+        .talk .container .talk-list .talk-info-block .content-container .info .detail-btn {
+          margin-top: 5px;
+          float: right; }
+        .talk .container .talk-list .talk-info-block .content-container .info .content {
+          line-height: 120%; }
+  .talk .container .talk-list .selected {
+    width: 100%;
+    background: #FFF;
+    border: 0px;
+    margin: 10px 0px; }
+
+.register .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; }
+  .register .container .register-form {
+    background: #FFF;
+    color: #FFF !important;
+    height: auto;
+    padding: 30px; }
+    .register .container .register-form h2 {
+      background: #ff9800;
+      width: 100%;
+      padding: 15px; }
+    .register .container .register-form .form-input {
+      display: block !important; }
+    .register .container .register-form .register-btn {
+      display: block !important;
+      color: #01BF83 !important;
+      background: rgba(233, 233, 233, 0.7) !important; }
+
+.login .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; }
+  .login .container .login-form {
+    background: #FFF;
+    color: #FFF !important;
+    height: auto;
+    padding: 30px; }
+    .login .container .login-form h2 {
+      background: #ff9800;
+      width: 100%;
+      padding: 15px; }
+    .login .container .login-form .form-input {
+      display: block !important; }
+    .login .container .login-form .register-btn {
+      display: block !important;
+      color: #01BF83 !important;
+      background: rgba(233, 233, 233, 0.7) !important; }
+
+.dashboard .container {
+  padding: 15px 5%; }
+  .dashboard .container .basic-info-block {
+    position: relative;
+    width: 100%;
+    padding: 15px; }
+    .dashboard .container .basic-info-block .tag {
+      position: absolute;
+      top: 15px;
+      left: 0px;
+      background: #ffa726;
+      padding: 15px;
+      color: #FFF; }
+  .dashboard .container .form-container {
+    margin-top: 45px; }
+    .dashboard .container .form-container div {
+      display: block !important; }
+
+.container {
+  padding: 15px;
+  margin-left: 15%;
+  position: relative; }
+
+.add-talk .container .form-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 15px; }
+  .add-talk .container .form-container .form {
+    width: 80%;
+    padding: 15px; }
+    .add-talk .container .form-container .form .text-input {
+      display: block !important;
+      width: 100% !important; }
+
+.add-talk .container .type-tabs button {
+  color: #111 !important; }
+
+.pending-talk .container h4 {
+  color: #A0A0A0; }
+
+.pending-talk .container .contact {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px; }
+  .pending-talk .container .contact .available-date {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; }
+  .pending-talk .container .contact .email {
+    display: inline-block; }
+    .pending-talk .container .contact .email i {
+      font-size: 24px; }
+
+.pending-talk .container .pending-talk-block {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #F5F5F5;
+  border-top: 1px solid #C5C5C5;
+  cursor: pointer;
+  padding: 30px 30px 15px;
+  width: 100%;
+  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out; }
+  .pending-talk .container .pending-talk-block .content-container {
+    width: 80%; }
+    .pending-talk .container .pending-talk-block .content-container .info {
+      width: 100%;
+      padding: 15px;
+      background: #FAFAFA; }
+      .pending-talk .container .pending-talk-block .content-container .info .speaker {
+        font-size: 16px;
+        color: #999; }
+      .pending-talk .container .pending-talk-block .content-container .info .title {
+        font-size: 24px;
+        font-weight: 800;
+        margin-bottom: 15px; }
+      .pending-talk .container .pending-talk-block .content-container .info .location, .pending-talk .container .pending-talk-block .content-container .info .time {
+        font-size: 16px;
+        color: #999; }
+      .pending-talk .container .pending-talk-block .content-container .info .time {
+        border-bottom: 1px solid #C5C5C5;
+        padding-bottom: 15px; }
+      .pending-talk .container .pending-talk-block .content-container .info .detail-btn {
+        margin-top: 5px;
+        float: right; }
+      .pending-talk .container .pending-talk-block .content-container .info .content {
+        line-height: 120%; }
+
+.date-block .year {
+  padding: 5px;
+  font-size: 14px;
+  color: #555; }
+
+.date-block .month {
+  padding: 5px;
+  font-size: 14px;
+  color: #555;
+  text-transform: uppercase; }
+
+.date-block .date {
+  padding: 5px;
+  font-size: 24px;
+  font-weight: bolder; }

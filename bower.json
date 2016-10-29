@@ -1,0 +1,21 @@
+{
+  "name": "promotion platform",
+  "description": "promotion platform",
+  "main": "index.js",
+  "authors": [
+    "Frank Tsai <franks0059@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "^4.6.3"
+  }
+}
