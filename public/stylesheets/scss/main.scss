@@ -142,7 +142,10 @@
     position: absolute;
     left: 5%;
     bottom: 20%;
-    height: 30vmin;
+    height: 50vmin;
+    @media all and (max-width: 768px) {
+      height: 30vmin;
+    }
   }
   .content-block {
     z-index: 100;
@@ -170,9 +173,21 @@
 
 .share {
   width: 100%;
-  min-height: 30vh;
+  min-height: 50vh;
   text-align: center;
   padding: 15px 0px;
+  position: relative;
+  .share-pic {
+    position: absolute;
+    right: 10%;
+    bottom: 5px;
+    height: 50vh;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .film {

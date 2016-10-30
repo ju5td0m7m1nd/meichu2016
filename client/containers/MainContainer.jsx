@@ -71,7 +71,7 @@ class MainContainer extends React.Component {
               <div className="icon-block">
                 <img className="chart-icon" src="public/images/hacknctu_collection.png"/>
               </div>
-              <h4>我們蒐集了您的瀏覽記錄，幫您找回那些專門投遞給您的廣告</h4>
+              <h4>我們藉由蒐集了您的瀏覽記錄，幫您找回那些為您量身投遞的優質廣告</h4>
             </div>
             <div className="flow-chart shadow-2">
               <div className="icon-block">
@@ -111,13 +111,19 @@ class MainContainer extends React.Component {
           <h2>
             和大家分享遇到了哪些廣告！
           </h2>
-          <div className="content">
-            <RaisedButton
-              label="分享"
-              backgroundColor="#FFF"
-              labelColor="#FFC107"
-            />
+          <div className="container">
+            <div className="content">
+              <h4>
+                遇到了哪些廣告，就像遇到了哪些人一樣有趣，快把廣告回顧分享給你的好友吧！
+              </h4>
+              <RaisedButton
+                label="分享"
+                backgroundColor="#FFF"
+                labelColor="#FFC107"
+              />
+            </div>
           </div>
+          <img className="share-pic" src="public/images/share_new~.png"/>
         </div>
         <div className="footer shadow-1">
           扣頂大法師2 x ringo © 2016

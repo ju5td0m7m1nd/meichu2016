@@ -134,7 +134,10 @@ h1 {
     position: absolute;
     left: 5%;
     bottom: 20%;
-    height: 30vmin; }
+    height: 50vmin; }
+    @media all and (max-width: 768px) {
+      .get-start .get-start-img {
+        height: 30vmin; } }
   .get-start .content-block {
     z-index: 100;
     text-align: left;
@@ -156,9 +159,19 @@ h1 {
 
 .share {
   width: 100%;
-  min-height: 30vh;
+  min-height: 50vh;
   text-align: center;
-  padding: 15px 0px; }
+  padding: 15px 0px;
+  position: relative; }
+  .share .share-pic {
+    position: absolute;
+    right: 10%;
+    bottom: 5px;
+    height: 50vh; }
+  .share .container {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
 
 .film {
   width: 100%;
