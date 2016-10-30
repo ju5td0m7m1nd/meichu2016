@@ -13,15 +13,57 @@ export default class ReviewContainer extends React.Component {
     super(props);
     this.state = {
       users: {},
+      classification: {
+        'none': [],
+        'click': [],
+        'buy': [],
+        'both': [],
+      }
     }
   }
 
   componentDidMount() {
     this.setState({users: userArray()});
+    this.setOrder();
     window.scrollTo(0, 0);
+
+    const data = []
+
+    Object.keys(this.state.classification).map(
+      type => {
+        if (type === 'none') {
+          this.state.classification[type].map(
+            item => data.push({type: 0, url: item.adurl})
+          )
+        } else if (type === 'click') {
+          this.state.classification[type].map(
+            item => data.push({type: 2, url: item.adurl})
+          )
+        } else if (type === 'buy') {
+          this.state.classification[type].map(
+            item => data.push({type: 1, url: item.adurl})
+          )
+        } else if (type === 'both') {
+          this.state.classification[type].map(
+            item => data.push({type: 3, url: item.adurl})
+          )
+        }
+      }
+    )
+    console.log(data);
+    $.ajax({
+      url: 'http://www.ju5td0m7m1nd.com:5000/video',
+      data,
+    })
+      .done(
+        result => console.log(result)
+      )
+      .fail(
+        () => console.log("Failed to get video")
+      )
   }
 
-  render() {
+  setOrder = () => {
     const user = this.props.params.userID;
     const {users} = this.state;
     let order = [];
@@ -50,6 +92,13 @@ export default class ReviewContainer extends React.Component {
         }
       })
     }
+    this.setState({classification})
+  }
+
+  render() {
+    const user = this.props.params.userID;
+    const {users, classification} = this.state;
+
     return (
       <section>
         <Nav route="review"/>
