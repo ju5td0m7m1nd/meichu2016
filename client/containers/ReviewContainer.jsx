@@ -7,11 +7,13 @@ import React from 'react';
 import Nav from '../components/Nav';
 import AdGrid from '../components/AdGrid'
 import userArray from '../utils/userArray'
-
+import CircularProgress from 'material-ui/CircularProgress';
 export default class ReviewContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      done: false,
+      loading: false,
       users: userArray(),
       classification: {
         'none': [],
@@ -26,9 +28,7 @@ export default class ReviewContainer extends React.Component {
 
     const data = this.setOrder();
     window.scrollTo(0, 0);
-
-    console.log(JSON.stringify(data));
-
+    this.setState({loading: true})
     $.ajax({
       method: 'POST',
       contentType: 'application/json',
@@ -36,7 +36,10 @@ export default class ReviewContainer extends React.Component {
       data:JSON.stringify({ads: data}),
     })
       .done(
-        result => console.log(result)
+        result => {
+          this.setState({done: true, loading: false})  
+          console.log("DONE")
+        }
       )
       .fail(
         () => console.log("Failed to get video")
@@ -91,7 +94,12 @@ export default class ReviewContainer extends React.Component {
       <section>
         <Nav route="review"/>
         <div className="film">
-          <video src="http://www.ju5td0m7m1nd.com:5000/static/holy.avi"/>
+          { this.state.loading ? <CircularProgress size={80} thickness={5} /> : ''}
+            { this.state.done ? 
+              <video  loop autoPlay >
+                <source src="public/flaskappmc216/holy.mp4" type="video/mp4" /> 
+              </video>
+            : '' } 
         </div>
         <div className="grid-container">
           <AdGrid subtitle="擦身而過" description="之前你可能忽略了這些廣告，但我們相信這些您可能會需要" ads={classification['none']}/>

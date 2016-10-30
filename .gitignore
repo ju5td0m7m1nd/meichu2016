@@ -1,6 +1,9 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Node template
 # Logs
+public/*/*.mp4
+public/*/*/*.mp4
+public/*/mc16
 logs
 *.log
 npm-debug.log*

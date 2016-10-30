@@ -35,7 +35,7 @@ module.exports = {
     loaders: [
       {
         test: /\.jsx?$/,
-        exclude: /node_modules/,
+        exclude: [/node_modules/, '/public/'],
         //loader: 'babel?compact=false',
         loader: 'babel-loader',
         query: {

@@ -44,7 +44,7 @@ class MainContainer extends React.Component {
       <section>
         <Nav route="/" user={this.state.currentUser} handleChange={this.handleChange}/>
         <div className="hero shadow-1">
-          <img className="hero-image" src="public/images/1.png"/>
+          <img className="hero-image" src="public/images/start.png"/>
           <div className="content">
             <div className="slogan">
               <h1>用三分鐘，</h1>
