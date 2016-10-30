@@ -42,9 +42,9 @@ class MainContainer extends React.Component {
     console.log(this.state.users);
     return (
       <section>
-        <Nav route="/" user={this.state.currentUser} handleChange={this.handleChange} />
+        <Nav route="/" user={this.state.currentUser} handleChange={this.handleChange}/>
         <div className="hero shadow-1">
-          <img className="hero-image" src="public/images/1.png" />
+          <img className="hero-image" src="public/images/1.png"/>
           <div className="content">
             <div className="slogan">
               <h1>用三分鐘，</h1>
@@ -57,28 +57,53 @@ class MainContainer extends React.Component {
           </div>
         </div>
         <div className="why" ref="why">
-          <div className="flow-chart"></div>
-          <div className="flow-chart"></div>
-          <div className="flow-chart"></div>
+          <div className="title">
+            <h1>How it Works</h1>
+          </div>
+          <div className="flow-container">
+            <div className="flow-chart shadow-2">
+              <div className="icon-block">
+                <img className="chart-icon" src="public/images/hacknctu_miss.png"/>
+              </div>
+              <h4>常常在瀏覽網站時，因為專注於網站的內容，而忽略了很多精心為您投遞廣告</h4>
+            </div>
+            <div className="flow-chart shadow-2">
+              <div className="icon-block">
+                <img className="chart-icon" src="public/images/hacknctu_collection.png"/>
+              </div>
+              <h4>我們蒐集了您的瀏覽記錄，幫您找回那些專門投遞給您的廣告</h4>
+            </div>
+            <div className="flow-chart shadow-2">
+              <div className="icon-block">
+                <img className="chart-icon" src="public/images/hacknctu_film.png"/>
+              </div>
+              <h4>我們將它們製作成一個動畫，您可以馬上回顧那些您可能錯過的優質廣告！</h4>
+            </div>
+          </div>
         </div>
         <div className="get-start shadow-1">
-          <div className="image-block">
-            <img className="get-start-img" src="public/images/get_start.png"/>
+          <div className="title">
+            <h1>廣告回顧</h1>
           </div>
-          <div className="content-block">
-            <h1>
-              想知道和什麼優質的廣告擦身而過嗎
-            </h1>
-            <h4>
-              我們透過您的瀏覽記錄，幫您整理出了所有曾經投放給您的廣告，將它們做成影片，您一定要看看！
-            </h4>
-            <div className="content">
-              <RaisedButton
-                label="馬上回顧"
-                backgroundColor="#FFF"
-                labelColor="#FFC107"
-                onClick={() => this.props.dispatch(push(`/${this.state.currentUser}`))}
-              />
+          <div className="container">
+            <div className="image-block">
+              <img className="get-start-img" src="public/images/get_start.png"/>
+            </div>
+            <div className="content-block shadow-2">
+              <h1>
+                想知道和什麼優質的廣告擦身而過嗎
+              </h1>
+              <h4>
+                我們透過您的瀏覽記錄，幫您整理出了所有曾經投放給您的廣告，將它們做成影片，您一定要看看！
+              </h4>
+              <div className="content">
+                <RaisedButton
+                  label="馬上回顧"
+                  backgroundColor="#FFF"
+                  labelColor="#FFC107"
+                  onClick={() => this.props.dispatch(push(`/${this.state.currentUser}`))}
+                />
+              </div>
             </div>
           </div>
         </div>

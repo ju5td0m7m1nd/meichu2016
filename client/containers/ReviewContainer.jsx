@@ -56,10 +56,13 @@ export default class ReviewContainer extends React.Component {
         <div className="film">
 
         </div>
-        <AdGrid subtitle="擦身而過" description="出現過在瀏覽過的網站" ads={classification['none']} />
-        <AdGrid subtitle="曾經相遇" description="出現過在瀏覽過的網站" ads={classification['click']} />
-        <AdGrid subtitle="透過下列廣告購買更便宜！" description="出現過在瀏覽過的網站" ads={classification['buy']} />
-        <AdGrid subtitle="感謝支持廣告和產品" description="出現過在瀏覽過的網站" ads={classification['both']} />
+        <div className="grid-container">
+          <AdGrid subtitle="擦身而過" description="之前你可能忽略了這些廣告，但我們相信這些您可能會需要" ads={classification['none']}/>
+          <AdGrid subtitle="曾經相遇" description="你看起來對這些很有興趣，我們幫你找了出來，讓你不會錯過任何東西" ads={classification['click']}/>
+          <AdGrid subtitle="透過下列廣告購買更便宜！" description="我們發現你曾經購買這件商品，透過這個廣告將會更便宜" ads={classification['buy']}/>
+          <AdGrid subtitle="感謝支持廣告和產品" description="我們發現你曾經透過這些廣告，購買了一些商品，我們會繼續努力提供你最需要的商品廣告"
+                  ads={classification['both']}/>
+        </div>
         <div className="footer shadow-1">
           扣頂大法師2 x ringo © 2016
         </div>

@@ -30,7 +30,7 @@ h1 {
     text-align: center;
     cursor: pointer; }
     .nav .logo-block .logo {
-      height: 10vh; }
+      height: 10vmin; }
     .nav .logo-block .title {
       font-weight: bold; }
   @media all and (max-width: 768px) {
@@ -52,7 +52,7 @@ h1 {
     position: absolute;
     right: 5%;
     bottom: 5%;
-    height: 55vh; }
+    height: 55vmin; }
   .hero .content {
     position: relative;
     width: 50%; }
@@ -86,28 +86,61 @@ h1 {
 
 .why {
   width: 100%;
-  padding: 30px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center; }
-  .why .flow-chart {
-    width: 30%;
-    height: 30vh; }
+  padding: 10% 30px; }
+  .why .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 32px;
+    font-size: 32px;
+    color: #49A9A6; }
+  .why .flow-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start; }
+    .why .flow-container .flow-chart {
+      padding: 16px 5%;
+      text-align: left;
+      width: 30%; }
+      .why .flow-container .flow-chart .icon-block {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .why .flow-container .flow-chart .icon-block .chart-icon {
+          width: 20vmin; }
+      .why .flow-container .flow-chart h4 {
+        line-height: 1.7;
+        color: #49A9A6; }
 
 .get-start {
+  position: relative;
   width: 100%;
   min-height: 30vh;
   text-align: center;
   background: #F7AF9D;
-  padding: 50px 10% 30px;
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start; }
+  padding: 10%; }
+  .get-start .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 32px;
+    font-size: 32px; }
+  .get-start .container {
+    padding: 15px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
   .get-start .get-start-img {
-    height: 30vh; }
+    position: absolute;
+    left: 5%;
+    bottom: 20%;
+    height: 30vmin; }
   .get-start .content-block {
+    z-index: 100;
     text-align: left;
-    width: 40%; }
+    width: 40%;
+    padding: 16px;
+    background: #FFF; }
     .get-start .content-block h2 {
       font-weight: bold; }
     .get-start .content-block h4 {
@@ -132,8 +165,13 @@ h1 {
   min-height: 60vh;
   background: #000; }
 
+.grid-container {
+  padding: 50px 0px; }
+
 .ad-grid {
   padding: 15px 10%; }
+  .ad-grid .tile {
+    cursor: pointer; }
 
 .footer {
   margin-top: 15px;
