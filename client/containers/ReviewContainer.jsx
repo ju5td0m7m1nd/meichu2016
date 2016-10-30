@@ -12,7 +12,7 @@ export default class ReviewContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: {},
+      users: userArray(),
       classification: {
         'none': [],
         'click': [],
@@ -23,37 +23,17 @@ export default class ReviewContainer extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({users: userArray()});
-    this.setOrder();
+
+    const data = this.setOrder();
     window.scrollTo(0, 0);
 
-    const data = []
+    console.log(JSON.stringify(data));
 
-    Object.keys(this.state.classification).map(
-      type => {
-        if (type === 'none') {
-          this.state.classification[type].map(
-            item => data.push({type: 0, url: item.adurl})
-          )
-        } else if (type === 'click') {
-          this.state.classification[type].map(
-            item => data.push({type: 2, url: item.adurl})
-          )
-        } else if (type === 'buy') {
-          this.state.classification[type].map(
-            item => data.push({type: 1, url: item.adurl})
-          )
-        } else if (type === 'both') {
-          this.state.classification[type].map(
-            item => data.push({type: 3, url: item.adurl})
-          )
-        }
-      }
-    )
-    console.log(data);
     $.ajax({
+      method: 'POST',
+      contentType: 'application/json',
       url: 'http://www.ju5td0m7m1nd.com:5000/video',
-      data,
+      data:JSON.stringify({ads: data}),
     })
       .done(
         result => console.log(result)
@@ -73,6 +53,7 @@ export default class ReviewContainer extends React.Component {
       'buy': [],
       'both': [],
     });
+    const data = []
     if (Object.keys(users).length) {
       order = Object.keys(users[user]).sort(
         (a, b) => users[user][b].length - users[user][a].length
@@ -82,17 +63,24 @@ export default class ReviewContainer extends React.Component {
       topAds.map(item => {
         const ad = users[user][item];
         if (ad.click === 0 && ad.buy === 0) {
+          data.push({tag: 0, url: ad.adurl})
           classification['none'].push(ad)
         } else if (ad.click === 1 && ad.buy === 0) {
+          data.push({tag: 2, url: ad.adurl})
           classification['click'].push(ad)
         } else if (ad.click === 0 && ad.buy === 1) {
+          data.push({tag: 1, url: ad.adurl})
           classification['buy'].push(ad)
         } else if (ad.click === 1 && ad.buy === 1) {
+          data.push({tag: 3, url: ad.adurl})
           classification['both'].push(ad)
         }
       })
     }
+
     this.setState({classification})
+
+    return data;
   }
 
   render() {
@@ -103,7 +91,7 @@ export default class ReviewContainer extends React.Component {
       <section>
         <Nav route="review"/>
         <div className="film">
-
+          <video src="http://www.ju5td0m7m1nd.com:5000/static/holy.avi"/>
         </div>
         <div className="grid-container">
           <AdGrid subtitle="擦身而過" description="之前你可能忽略了這些廣告，但我們相信這些您可能會需要" ads={classification['none']}/>
